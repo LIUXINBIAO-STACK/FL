@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; font-size: 20px; font-weight: 700; fill: #0F172A; }
+      .row-badge { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; font-size: 14px; font-weight: 700; fill: #FFFFFF; }
+      .node-title { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; font-size: 13px; font-weight: 700; fill: #1E293B; }
+      .node-sub { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; font-size: 11.5px; fill: #475569; }
+      .net-label { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; font-size: 11.5px; font-weight: 600; fill: #FFFFFF; }
+      .sum-title { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; font-size: 13px; font-weight: 700; }
+      .sum-item { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; font-size: 12px; fill: #334155; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="540" rx="12" fill="#FFFFFF"/>
+
+  <!-- Main Title -->
+  <text x="480" y="36" text-anchor="middle" class="title">传统分布式机器学习 vs. 联邦学习：核心差异对比</text>
+
+  <!-- ==================== TOP ROW: Traditional Distributed ML ==================== -->
+  <rect x="28" y="58" width="904" height="218" rx="12" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="28" y="58" width="290" height="34" rx="10" fill="#1D4ED8"/>
+  <text x="173" y="80" text-anchor="middle" class="row-badge">传统分布式训练（数据中心多卡并行）</text>
+
+  <!-- Center Server -->
+  <rect x="48" y="108" width="144" height="148" rx="10" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.8"/>
+  <text x="120" y="132" text-anchor="middle" class="node-title">中心参数服务器</text>
+  <text x="120" y="150" text-anchor="middle" class="node-sub">全局数据洗牌切分</text>
+  <!-- Unified Balanced Bars -->
+  <rect x="74" y="176" width="22" height="54" rx="3" fill="#3B82F6"/>
+  <rect x="109" y="176" width="22" height="54" rx="3" fill="#22C55E"/>
+  <rect x="144" y="176" width="22" height="54" rx="3" fill="#F97316"/>
+  <text x="120" y="246" text-anchor="middle" class="node-sub">类别 A / B / C 均衡</text>
+
+  <!-- High-Speed Connection -->
+  <line x1="192" y1="182" x2="296" y2="182" stroke="#1D4ED8" stroke-width="4"/>
+  <rect x="200" y="152" width="88" height="24" rx="6" fill="#1D4ED8"/>
+  <text x="244" y="168" text-anchor="middle" class="net-label">高速机房内网</text>
+  <text x="244" y="202" text-anchor="middle" class="node-sub" fill="#1E40AF">高带宽 · 低延迟</text>
+
+  <!-- GPU Worker 1 -->
+  <rect x="296" y="108" width="132" height="148" rx="10" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="362" y="132" text-anchor="middle" class="node-title">GPU 节点 1</text>
+  <text x="362" y="148" text-anchor="middle" class="node-sub">IID 均匀子集</text>
+  <rect x="322" y="178" width="20" height="50" rx="3" fill="#3B82F6"/>
+  <rect x="352" y="178" width="20" height="50" rx="3" fill="#22C55E"/>
+  <rect x="382" y="178" width="20" height="50" rx="3" fill="#F97316"/>
+  <text x="362" y="244" text-anchor="middle" class="node-sub">算力同构 · 稳定</text>
+
+  <!-- GPU Worker 2 -->
+  <rect x="442" y="108" width="132" height="148" rx="10" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="508" y="132" text-anchor="middle" class="node-title">GPU 节点 2</text>
+  <text x="508" y="148" text-anchor="middle" class="node-sub">IID 均匀子集</text>
+  <rect x="468" y="178" width="20" height="50" rx="3" fill="#3B82F6"/>
+  <rect x="498" y="178" width="20" height="50" rx="3" fill="#22C55E"/>
+  <rect x="528" y="178" width="20" height="50" rx="3" fill="#F97316"/>
+  <text x="508" y="244" text-anchor="middle" class="node-sub">算力同构 · 稳定</text>
+
+  <!-- GPU Worker 3 -->
+  <rect x="588" y="108" width="132" height="148" rx="10" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="654" y="132" text-anchor="middle" class="node-title">GPU 节点 3</text>
+  <text x="654" y="148" text-anchor="middle" class="node-sub">IID 均匀子集</text>
+  <rect x="614" y="178" width="20" height="50" rx="3" fill="#3B82F6"/>
+  <rect x="644" y="178" width="20" height="50" rx="3" fill="#22C55E"/>
+  <rect x="674" y="178" width="20" height="50" rx="3" fill="#F97316"/>
+  <text x="654" y="244" text-anchor="middle" class="node-sub">算力同构 · 稳定</text>
+
+  <!-- Summary Box Top -->
+  <rect x="736" y="108" width="176" height="148" rx="10" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="752" y="134" class="sum-title" fill="#1D4ED8">核心系统特征</text>
+  <text x="752" y="162" class="sum-item">• 数据分布：IID 均衡</text>
+  <text x="752" y="186" class="sum-item">• 样本量：各节点一致</text>
+  <text x="752" y="210" class="sum-item">• 网络环境：高速稳定</text>
+  <text x="752" y="234" class="sum-item">• 目标：最大化算力加速</text>
+
+  <!-- ==================== BOTTOM ROW: Federated Learning ==================== -->
+  <rect x="28" y="296" width="904" height="222" rx="12" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1.5"/>
+  <rect x="28" y="296" width="290" height="34" rx="10" fill="#6D28D9"/>
+  <text x="173" y="318" text-anchor="middle" class="row-badge">联邦学习（跨机构 / 跨边缘设备）</text>
+
+  <!-- FL Aggregation Server -->
+  <rect x="48" y="346" width="144" height="152" rx="10" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.8"/>
+  <text x="120" y="372" text-anchor="middle" class="node-title">中央聚合服务器</text>
+  <text x="120" y="392" text-anchor="middle" class="node-sub">无权访问原始数据</text>
+  <rect x="64" y="416" width="112" height="36" rx="6" fill="#EDE9FE"/>
+  <text x="120" y="438" text-anchor="middle" font-size="12" font-weight="600" fill="#5B21B6" font-family="sans-serif">仅聚合模型参数</text>
+  <text x="120" y="478" text-anchor="middle" class="node-sub">按样本量加权平均</text>
+
+  <!-- Unstable Edge Network -->
+  <line x1="192" y1="422" x2="296" y2="422" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="6,5"/>
+  <rect x="200" y="392" width="88" height="24" rx="6" fill="#7C3AED"/>
+  <text x="244" y="408" text-anchor="middle" class="net-label">边缘弱网环境</text>
+  <text x="244" y="442" text-anchor="middle" class="node-sub" fill="#5B21B6">低带宽 · 易掉线</text>
+
+  <!-- Client 1 (Skewed A, Large) -->
+  <rect x="296" y="346" width="132" height="152" rx="10" fill="#FFFFFF" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="362" y="370" text-anchor="middle" class="node-title">客户端 1</text>
+  <text x="362" y="386" text-anchor="middle" class="node-sub">Non-IID（偏 A 类）</text>
+  <rect x="322" y="402" width="20" height="68" rx="3" fill="#3B82F6"/>
+  <rect x="352" y="454" width="20" height="16" rx="3" fill="#22C55E"/>
+  <rect x="382" y="462" width="20" height="8" rx="3" fill="#F97316"/>
+  <text x="362" y="486" text-anchor="middle" class="node-sub">样本量大 · 算力强</text>
+
+  <!-- Client 2 (Skewed B, Medium) -->
+  <rect x="442" y="346" width="132" height="152" rx="10" fill="#FFFFFF" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="508" y="370" text-anchor="middle" class="node-title">客户端 2</text>
+  <text x="508" y="386" text-anchor="middle" class="node-sub">Non-IID（偏 B 类）</text>
+  <rect x="468" y="458" width="20" height="12" rx="3" fill="#3B82F6"/>
+  <rect x="498" y="418" width="20" height="52" rx="3" fill="#22C55E"/>
+  <rect x="528" y="452" width="20" height="18" rx="3" fill="#F97316"/>
+  <text x="508" y="486" text-anchor="middle" class="node-sub">样本量中 · 算力中</text>
+
+  <!-- Client 3 (Skewed C, Small, Straggler) -->
+  <rect x="588" y="346" width="132" height="152" rx="10" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.8" stroke-dasharray="5,4"/>
+  <text x="654" y="370" text-anchor="middle" class="node-title">客户端 3（掉队）</text>
+  <text x="654" y="386" text-anchor="middle" class="node-sub">Non-IID（偏 C 类）</text>
+  <rect x="614" y="466" width="20" height="4" rx="2" fill="#3B82F6"/>
+  <rect x="644" y="466" width="20" height="4" rx="2" fill="#22C55E"/>
+  <rect x="674" y="440" width="20" height="30" rx="3" fill="#F97316"/>
+  <text x="654" y="486" text-anchor="middle" class="node-sub" fill="#7C3AED">样本极少 · 随时离线</text>
+
+  <!-- Summary Box Bottom -->
+  <rect x="736" y="346" width="176" height="152" rx="10" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.5"/>
+  <text x="752" y="372" class="sum-title" fill="#6D28D9">核心系统特征</text>
+  <text x="752" y="400" class="sum-item">• 数据分布：高度 Non-IID</text>
+  <text x="752" y="424" class="sum-item">• 样本量：极度不均衡</text>
+  <text x="752" y="448" class="sum-item">• 设备网络：异构且脆弱</text>
+  <text x="752" y="472" class="sum-item">• 目标：保隐私 + 降通信</text>
+</svg>

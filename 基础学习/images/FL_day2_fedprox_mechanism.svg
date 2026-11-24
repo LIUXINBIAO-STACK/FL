@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 510" width="960" height="510">
+  <defs>
+    <style>
+      .f { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .mono { font-family: "Consolas", "Courier New", monospace; }
+    </style>
+    <clipPath id="clip-right">
+      <rect x="516" y="128" width="396" height="236" rx="8" />
+    </clipPath>
+    <marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2B6CB0" />
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#DD6B20" />
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2F855A" />
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6B46C1" />
+    </marker>
+    <marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#C53030" />
+    </marker>
+  </defs>
+
+  <rect width="960" height="510" fill="#FFFFFF" rx="12" />
+
+  <text x="480" y="36" text-anchor="middle" class="f" font-size="20" font-weight="bold" fill="#1A202C">驯服 Non-IID 漂移：FedAvg vs. FedProx 近端正则化机制</text>
+  <text x="480" y="58" text-anchor="middle" class="f" font-size="13" fill="#718096">Taming Client Drift: Vanilla FedAvg vs. FedProx Proximal Regularization (Li et al., MLSys 2020)</text>
+
+  <rect x="28" y="78" width="436" height="408" rx="10" fill="#FFF5F5" stroke="#FEB2B2" stroke-width="1.5" />
+  <rect x="28" y="78" width="436" height="38" rx="10" fill="#C53030" />
+  <rect x="28" y="104" width="436" height="12" fill="#C53030" />
+  <text x="246" y="102" text-anchor="middle" class="f" font-size="14" font-weight="bold" fill="#FFFFFF">FedAvg：无约束本地更新（严重漂移）</text>
+
+  <rect x="48" y="128" width="396" height="236" rx="8" fill="#FFFFFF" stroke="#FEB2B2" stroke-width="1" />
+
+  <ellipse cx="136" cy="184" rx="68" ry="38" fill="none" stroke="#BEE3F8" stroke-width="1.3" stroke-dasharray="3,2" />
+  <ellipse cx="136" cy="184" rx="34" ry="20" fill="#EBF8FF" stroke="#63B3ED" stroke-width="1.3" />
+  <circle cx="136" cy="184" r="4.5" fill="#2B6CB0" />
+  <text x="136" y="158" text-anchor="middle" class="mono" font-size="11" font-weight="bold" fill="#2B6CB0">w1* (客户1局部最优)</text>
+
+  <ellipse cx="366" cy="296" rx="66" ry="38" fill="none" stroke="#FEEBC8" stroke-width="1.3" stroke-dasharray="3,2" />
+  <ellipse cx="366" cy="296" rx="34" ry="20" fill="#FFFAF0" stroke="#F6AD55" stroke-width="1.3" />
+  <circle cx="366" cy="296" r="4.5" fill="#DD6B20" />
+  <text x="352" y="348" text-anchor="middle" class="mono" font-size="11" font-weight="bold" fill="#C05621">w2* (客户2局部最优)</text>
+
+  <circle cx="298" cy="178" r="6" fill="#2F855A" />
+  <text x="356" y="182" text-anchor="middle" class="mono" font-size="11.5" font-weight="bold" fill="#22543D">w* (全局最优)</text>
+
+  <circle cx="108" cy="322" r="6" fill="#1A202C" />
+  <text x="108" y="344" text-anchor="middle" class="mono" font-size="11.5" font-weight="bold" fill="#1A202C">w_t (起点)</text>
+
+  <polyline points="108,322 118,274 126,230 135,194" fill="none" stroke="#2B6CB0" stroke-width="2.4" marker-end="url(#arr-b)" />
+  <circle cx="136" cy="189" r="4.5" fill="#2B6CB0" />
+
+  <polyline points="108,322 190,318 274,308 354,298" fill="none" stroke="#DD6B20" stroke-width="2.4" marker-end="url(#arr-o)" />
+  <circle cx="361" cy="297" r="4.5" fill="#DD6B20" />
+
+  <line x1="136" y1="189" x2="361" y2="297" stroke="#718096" stroke-width="1.5" stroke-dasharray="4,3" />
+  <circle cx="248" cy="243" r="6" fill="#E53E3E" stroke="#FFFFFF" stroke-width="1.5" />
+  <text x="206" y="266" class="mono" font-size="11" font-weight="bold" fill="#C53030">w_(t+1)</text>
+
+  <line x1="294" y1="185" x2="254" y2="236" stroke="#C53030" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#arr-r)" />
+  <rect x="278" y="204" width="110" height="22" rx="11" fill="#FED7D7" stroke="#E53E3E" stroke-width="1" />
+  <text x="333" y="219" text-anchor="middle" class="f" font-size="10.5" font-weight="bold" fill="#9B2C2C">偏离全局最优</text>
+
+  <rect x="48" y="376" width="396" height="96" rx="6" fill="#FFFFFF" stroke="#FEB2B2" stroke-width="1" />
+  <text x="64" y="398" class="f" font-size="12" font-weight="bold" fill="#C53030">本地优化目标（无约束）：</text>
+  <text x="218" y="398" class="mono" font-size="12" font-weight="bold" fill="#2D3748">min F_k(w)</text>
+  <text x="64" y="421" class="f" font-size="11.5" fill="#4A5568">1. 数据异构：本地多轮更新放任参数跑向各自极值点</text>
+  <text x="64" y="441" class="f" font-size="11.5" fill="#4A5568">2. 系统异构：要求所有设备必须跑满固定 E 轮，否则丢弃</text>
+  <text x="64" y="461" class="f" font-size="11.5" fill="#C53030">结果：收敛剧烈震荡，慢设备白白浪费算力</text>
+
+  <rect x="496" y="78" width="436" height="408" rx="10" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5" />
+  <rect x="496" y="78" width="436" height="38" rx="10" fill="#2F855A" />
+  <rect x="496" y="104" width="436" height="12" fill="#2F855A" />
+  <text x="714" y="102" text-anchor="middle" class="f" font-size="14" font-weight="bold" fill="#FFFFFF">FedProx：加入近端项“弹性绳”（抑制漂移）</text>
+
+  <rect x="516" y="128" width="396" height="236" rx="8" fill="#FFFFFF" stroke="#C6F6D5" stroke-width="1" />
+
+  <g clip-path="url(#clip-right)">
+    <circle cx="576" cy="322" r="128" fill="#FAF5FF" fill-opacity="0.55" stroke="#805AD5" stroke-width="1.5" stroke-dasharray="5,4" />
+  </g>
+  <rect x="516" y="128" width="396" height="236" rx="8" fill="none" stroke="#C6F6D5" stroke-width="1" />
+  <text x="530" y="218" class="f" font-size="10.5" font-weight="bold" fill="#6B46C1">近端约束信赖域</text>
+
+  <ellipse cx="604" cy="184" rx="68" ry="38" fill="none" stroke="#BEE3F8" stroke-width="1.2" stroke-dasharray="3,2" />
+  <circle cx="604" cy="184" r="4" fill="#A0AEC0" />
+  <text x="604" y="160" text-anchor="middle" class="mono" font-size="10.5" fill="#718096">w1* (未达极值)</text>
+
+  <ellipse cx="834" cy="296" rx="66" ry="38" fill="none" stroke="#FEEBC8" stroke-width="1.2" stroke-dasharray="3,2" />
+  <circle cx="834" cy="296" r="4" fill="#A0AEC0" />
+  <text x="820" y="348" text-anchor="middle" class="mono" font-size="10.5" fill="#718096">w2* (未达极值)</text>
+
+  <circle cx="766" cy="178" r="6" fill="#2F855A" />
+  <text x="824" y="182" text-anchor="middle" class="mono" font-size="11.5" font-weight="bold" fill="#22543D">w* (全局最优)</text>
+
+  <circle cx="576" cy="322" r="6" fill="#1A202C" />
+  <text x="576" y="344" text-anchor="middle" class="mono" font-size="11.5" font-weight="bold" fill="#1A202C">w_t (锚点)</text>
+
+  <line x1="576" y1="322" x2="626" y2="236" stroke="#2B6CB0" stroke-width="2.5" marker-end="url(#arr-b)" />
+  <circle cx="630" cy="230" r="5" fill="#2B6CB0" />
+  <text x="644" y="226" class="mono" font-size="11" font-weight="bold" fill="#2B6CB0">w1</text>
+
+  <line x1="576" y1="322" x2="686" y2="288" stroke="#DD6B20" stroke-width="2.5" marker-end="url(#arr-o)" />
+  <circle cx="693" cy="286" r="5" fill="#DD6B20" />
+  <text x="706" y="294" class="mono" font-size="11" font-weight="bold" fill="#C05621">w2</text>
+
+  <line x1="625" y1="242" x2="585" y2="310" stroke="#6B46C1" stroke-width="1.8" stroke-dasharray="3,2" marker-end="url(#arr-p)" />
+  <line x1="680" y1="291" x2="588" y2="318" stroke="#6B46C1" stroke-width="1.8" stroke-dasharray="3,2" marker-end="url(#arr-p)" />
+  <rect x="706" y="234" width="164" height="24" rx="12" fill="#E9D8FD" stroke="#805AD5" stroke-width="1" />
+  <text x="788" y="250" text-anchor="middle" class="f" font-size="10.5" font-weight="bold" fill="#553C9A">弹性拉力 μ/2 · ||w - w_t||²</text>
+
+  <line x1="630" y1="230" x2="693" y2="286" stroke="#718096" stroke-width="1.5" stroke-dasharray="4,3" />
+  <circle cx="662" cy="258" r="6" fill="#2F855A" stroke="#FFFFFF" stroke-width="1.5" />
+  <line x1="576" y1="322" x2="655" y2="264" stroke="#2F855A" stroke-width="2.2" marker-end="url(#arr-g)" />
+  <text x="678" y="206" class="f" font-size="11" font-weight="bold" fill="#22543D">聚合点稳定朝向 w* 推进</text>
+
+  <rect x="516" y="376" width="396" height="96" rx="6" fill="#FFFFFF" stroke="#9AE6B4" stroke-width="1" />
+  <text x="532" y="398" class="f" font-size="12" font-weight="bold" fill="#22543D">本地优化目标：</text>
+  <text x="620" y="398" class="mono" font-size="12" font-weight="bold" fill="#6B46C1">min F_k(w) + (μ/2)||w - w_t||²</text>
+  <text x="532" y="421" class="f" font-size="11.5" fill="#4A5568">1. 数据异构：近端项像弹簧一样拉住本地参数，限制过度漂移</text>
+  <text x="532" y="441" class="f" font-size="11.5" fill="#4A5568">2. 系统异构：允许慢设备只跑部分步数（不完整工作）并安全聚合</text>
+  <text x="532" y="461" class="f" font-size="11.5" fill="#22543D">结果：大幅提升 Non-IID 收敛稳定性（μ = 0 时退化为 FedAvg）</text>
+</svg>

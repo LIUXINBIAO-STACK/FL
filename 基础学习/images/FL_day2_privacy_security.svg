@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <style>
+      .f { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .mono { font-family: "Consolas", "Courier New", monospace; }
+    </style>
+    <marker id="arr-r3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#C53030" />
+    </marker>
+    <marker id="arr-g3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2F855A" />
+    </marker>
+  </defs>
+
+  <rect width="960" height="540" fill="#FFFFFF" rx="12" />
+
+  <text x="480" y="36" text-anchor="middle" class="f" font-size="20" font-weight="bold" fill="#1A202C">联邦学习隐私与安全攻防链路：为什么“仅传梯度”并不安全？</text>
+  <text x="480" y="58" text-anchor="middle" class="f" font-size="13" fill="#718096">Privacy Attacks (Gradient Inversion / Poisoning) vs. Defense-in-Depth (DP + SecAgg + Robust Aggregation)</text>
+
+  <rect x="28" y="78" width="904" height="202" rx="10" fill="#FFF5F5" stroke="#FEB2B2" stroke-width="1.5" />
+  <rect x="28" y="78" width="248" height="32" rx="8" fill="#C53030" />
+  <text x="152" y="99" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#FFFFFF">两大核心攻击面（裸跑 FedAvg 风险）</text>
+  <text x="292" y="99" class="f" font-size="12" font-weight="bold" fill="#9B2C2C">原始数据不出域 ≠ 绝对安全：梯度泄露信息，恶意节点可篡改模型</text>
+
+  <rect x="48" y="122" width="420" height="142" rx="8" fill="#FFFFFF" stroke="#FC8181" stroke-width="1.5" />
+  <text x="258" y="144" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#C53030">威胁一：梯度反演攻击（如 DLG，隐私泄露）</text>
+
+  <rect x="60" y="160" width="88" height="56" rx="6" fill="#EDF2F7" stroke="#A0AEC0" stroke-width="1" />
+  <text x="104" y="182" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#2D3748">客户端上传</text>
+  <text x="104" y="202" text-anchor="middle" class="mono" font-size="11" fill="#2B6CB0">明文梯度 g_k</text>
+
+  <line x1="148" y1="188" x2="174" y2="188" stroke="#C53030" stroke-width="2" marker-end="url(#arr-r3)" />
+
+  <rect x="180" y="160" width="146" height="56" rx="6" fill="#FED7D7" stroke="#E53E3E" stroke-width="1.2" />
+  <text x="253" y="180" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#9B2C2C">恶意/好奇服务器</text>
+  <text x="253" y="200" text-anchor="middle" class="mono" font-size="10.5" fill="#742A2A">min ||g(x') - g_k||²</text>
+
+  <line x1="326" y1="188" x2="352" y2="188" stroke="#C53030" stroke-width="2" marker-end="url(#arr-r3)" />
+
+  <rect x="358" y="160" width="96" height="56" rx="6" fill="#FFF5F5" stroke="#C53030" stroke-width="1.5" />
+  <text x="406" y="182" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#C53030">像素级还原</text>
+  <text x="406" y="202" text-anchor="middle" class="f" font-size="10.5" fill="#742A2A">原始图像/文本</text>
+
+  <text x="258" y="246" text-anchor="middle" class="f" font-size="11" fill="#4A5568">机理：反复优化虚拟输入 x' 使生成的假梯度逼近真实梯度 g_k</text>
+
+  <rect x="492" y="122" width="420" height="142" rx="8" fill="#FFFFFF" stroke="#FC8181" stroke-width="1.5" />
+  <text x="702" y="144" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#C53030">威胁二：投毒与拜占庭攻击（模型完整度破坏）</text>
+
+  <rect x="508" y="160" width="112" height="56" rx="6" fill="#FED7D7" stroke="#E53E3E" stroke-width="1.2" />
+  <text x="564" y="181" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#9B2C2C">恶意客户端</text>
+  <text x="564" y="201" text-anchor="middle" class="f" font-size="10.5" fill="#742A2A">篡改标签 / 放大梯度</text>
+
+  <line x1="620" y1="188" x2="656" y2="188" stroke="#C53030" stroke-width="2" marker-end="url(#arr-r3)" />
+
+  <rect x="662" y="160" width="110" height="56" rx="6" fill="#EDF2F7" stroke="#A0AEC0" stroke-width="1" />
+  <text x="717" y="181" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#2D3748">无防护平均</text>
+  <text x="717" y="201" text-anchor="middle" class="mono" font-size="10.5" fill="#4A5568">线性加权 FedAvg</text>
+
+  <line x1="772" y1="188" x2="800" y2="188" stroke="#C53030" stroke-width="2" marker-end="url(#arr-r3)" />
+
+  <rect x="806" y="160" width="92" height="56" rx="6" fill="#FFF5F5" stroke="#C53030" stroke-width="1.5" />
+  <text x="852" y="181" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#C53030">全局模型受损</text>
+  <text x="852" y="201" text-anchor="middle" class="f" font-size="10.5" fill="#742A2A">精度崩溃 / 植入后门</text>
+
+  <text x="702" y="246" text-anchor="middle" class="f" font-size="11" fill="#4A5568">机理：单个恶意节点的极端异常向量即可把线性平均值彻底拉偏</text>
+
+  <rect x="28" y="298" width="904" height="220" rx="10" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5" />
+  <rect x="28" y="298" width="248" height="32" rx="8" fill="#2F855A" />
+  <text x="152" y="319" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#FFFFFF">三层纵深防御体系（工业与科研标准）</text>
+  <text x="292" y="319" class="f" font-size="12" font-weight="bold" fill="#22543D">按“本地端 → 传输层 → 聚合端”逐级加固，兼顾隐私边界与鲁棒性</text>
+
+  <rect x="48" y="344" width="268" height="156" rx="8" fill="#FFFFFF" stroke="#68D391" stroke-width="1.5" />
+  <rect x="48" y="344" width="268" height="30" rx="8" fill="#2B6CB0" />
+  <rect x="48" y="362" width="268" height="12" fill="#2B6CB0" />
+  <text x="182" y="364" text-anchor="middle" class="f" font-size="12.5" font-weight="bold" fill="#FFFFFF">防线一：本地差分隐私（DP）</text>
+  <text x="64" y="396" class="f" font-size="11.5" font-weight="bold" fill="#2D3748">核心操作：梯度裁剪 + 注入高斯噪声</text>
+  <rect x="64" y="406" width="236" height="28" rx="4" fill="#EBF8FF" stroke="#90CDF4" stroke-width="1" />
+  <text x="182" y="424" text-anchor="middle" class="mono" font-size="11" font-weight="bold" fill="#2B6CB0">g' = Clip(g, C) + N(0, σ²C²I)</text>
+  <text x="64" y="454" class="f" font-size="11" fill="#4A5568">• 抵御：梯度反演与成员推理攻击</text>
+  <text x="64" y="474" class="f" font-size="11" fill="#4A5568">• 代价：隐私预算 ε 越小，模型精度越低</text>
+  <text x="64" y="492" class="f" font-size="10.5" fill="#2B6CB0">（严格数学隐私证明，低计算开销）</text>
+
+  <line x1="316" y1="422" x2="342" y2="422" stroke="#2F855A" stroke-width="2.4" marker-end="url(#arr-g3)" />
+
+  <rect x="348" y="344" width="268" height="156" rx="8" fill="#FFFFFF" stroke="#68D391" stroke-width="1.5" />
+  <rect x="348" y="344" width="268" height="30" rx="8" fill="#2F855A" />
+  <rect x="348" y="362" width="268" height="12" fill="#2F855A" />
+  <text x="482" y="364" text-anchor="middle" class="f" font-size="12.5" font-weight="bold" fill="#FFFFFF">防线二：安全聚合 / 同态加密</text>
+  <text x="364" y="396" class="f" font-size="11.5" font-weight="bold" fill="#2D3748">核心操作：密文求和 / 掩码抵消</text>
+  <rect x="364" y="406" width="236" height="28" rx="4" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1" />
+  <text x="482" y="424" text-anchor="middle" class="mono" font-size="11" font-weight="bold" fill="#22543D">Server 仅见 Σ w_k，不见单个 w_k</text>
+  <text x="364" y="454" class="f" font-size="11" fill="#4A5568">• 抵御：服务器窥探单个客户端更新</text>
+  <text x="364" y="474" class="f" font-size="11" fill="#4A5568">• 代价：加解密计算或通信轮次开销大</text>
+  <text x="364" y="492" class="f" font-size="10.5" fill="#22543D">（几乎无损模型精度，跨机构首选）</text>
+
+  <line x1="616" y1="422" x2="642" y2="422" stroke="#2F855A" stroke-width="2.4" marker-end="url(#arr-g3)" />
+
+  <rect x="648" y="344" width="264" height="156" rx="8" fill="#FFFFFF" stroke="#68D391" stroke-width="1.5" />
+  <rect x="648" y="344" width="264" height="30" rx="8" fill="#6B46C1" />
+  <rect x="648" y="362" width="264" height="12" fill="#6B46C1" />
+  <text x="780" y="364" text-anchor="middle" class="f" font-size="12.5" font-weight="bold" fill="#FFFFFF">防线三：拜占庭鲁棒聚合</text>
+  <text x="664" y="396" class="f" font-size="11.5" font-weight="bold" fill="#2D3748">核心操作：用几何中心替代算术平均</text>
+  <rect x="664" y="406" width="232" height="28" rx="4" fill="#FAF5FF" stroke="#D6BCFA" stroke-width="1" />
+  <text x="780" y="424" text-anchor="middle" class="mono" font-size="11" font-weight="bold" fill="#553C9A">Krum / Trimmed Mean / Median</text>
+  <text x="664" y="454" class="f" font-size="11" fill="#4A5568">• 抵御：投毒节点、异常梯度破坏收敛</text>
+  <text x="664" y="474" class="f" font-size="11" fill="#4A5568">• 难点：高度 Non-IID 下易误杀正常小众</text>
+  <text x="664" y="492" class="f" font-size="10.5" fill="#6B46C1">（剔除离群向量，守住模型底线）</text>
+</svg>

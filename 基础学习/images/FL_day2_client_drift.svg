@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500">
+  <defs>
+    <style>
+      .f { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .mono { font-family: "Consolas", "Courier New", monospace; }
+    </style>
+    <marker id="arr-b2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2B6CB0" />
+    </marker>
+    <marker id="arr-o2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#DD6B20" />
+    </marker>
+    <marker id="arr-g2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2F855A" />
+    </marker>
+    <marker id="arr-r2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#C53030" />
+    </marker>
+  </defs>
+
+  <rect width="960" height="500" fill="#FFFFFF" rx="12" />
+
+  <text x="480" y="36" text-anchor="middle" class="f" font-size="20" font-weight="bold" fill="#1A202C">几何直觉：为什么 Non-IID 下增大本地轮数 E 会引发“客户端漂移”？</text>
+  <text x="480" y="58" text-anchor="middle" class="f" font-size="13" fill="#718096">Geometric Intuition of Client Drift in Parameter Space: IID vs. Non-IID Data</text>
+
+  
+  <rect x="28" y="78" width="436" height="398" rx="10" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5" />
+  <rect x="28" y="78" width="436" height="38" rx="10" fill="#2F855A" />
+  <rect x="28" y="104" width="436" height="12" fill="#2F855A" />
+  <text x="246" y="102" text-anchor="middle" class="f" font-size="14" font-weight="bold" fill="#FFFFFF">IID 数据分布：局部最优点高度接近全局最优点</text>
+
+  <rect x="48" y="130" width="396" height="248" rx="8" fill="#FFFFFF" stroke="#C6F6D5" stroke-width="1" />
+
+  <ellipse cx="260" cy="215" rx="155" ry="95" fill="none" stroke="#EDF2F7" stroke-width="1.5" />
+  <ellipse cx="260" cy="215" rx="115" ry="70" fill="none" stroke="#E2E8F0" stroke-width="1.5" />
+  <ellipse cx="260" cy="215" rx="75" ry="45" fill="none" stroke="#CBD5E0" stroke-width="1.5" />
+  <ellipse cx="260" cy="215" rx="35" ry="22" fill="#F0FFF4" stroke="#68D391" stroke-width="1.5" />
+
+  <circle cx="260" cy="215" r="6" fill="#2F855A" />
+  <text x="272" y="212" class="mono" font-size="12" font-weight="bold" fill="#22543D">w* (全局最优)</text>
+
+  <circle cx="236" cy="196" r="4.5" fill="#2B6CB0" />
+  <text x="192" y="191" class="mono" font-size="11" font-weight="bold" fill="#2B6CB0">w1*</text>
+
+  <circle cx="282" cy="236" r="4.5" fill="#DD6B20" />
+  <text x="292" y="242" class="mono" font-size="11" font-weight="bold" fill="#C05621">w2*</text>
+
+  <circle cx="102" cy="332" r="6" fill="#1A202C" />
+  <text x="72" y="352" class="mono" font-size="12" font-weight="bold" fill="#1A202C">w_t (起点)</text>
+
+  <polyline points="102,332 142,288 182,250 222,216" fill="none" stroke="#2B6CB0" stroke-width="2.4" marker-end="url(#arr-b2)" />
+  <circle cx="222" cy="216" r="4.5" fill="#2B6CB0" />
+  <text x="136" y="246" class="f" font-size="11" font-weight="bold" fill="#2B6CB0">客户端 1 (E步)</text>
+  <text x="180" y="212" class="mono" font-size="11" font-weight="bold" fill="#2B6CB0">w1</text>
+
+  <polyline points="102,332 158,308 212,282 264,244" fill="none" stroke="#DD6B20" stroke-width="2.4" marker-end="url(#arr-o2)" />
+  <circle cx="264" cy="244" r="4.5" fill="#DD6B20" />
+  <text x="224" y="302" class="f" font-size="11" font-weight="bold" fill="#C05621">客户端 2 (E步)</text>
+  <text x="272" y="260" class="mono" font-size="11" font-weight="bold" fill="#C05621">w2</text>
+
+  <line x1="222" y1="216" x2="264" y2="244" stroke="#718096" stroke-width="1.6" stroke-dasharray="4,3" />
+  <line x1="102" y1="332" x2="238" y2="233" stroke="#2F855A" stroke-width="2.4" stroke-dasharray="6,3" marker-end="url(#arr-g2)" />
+  <circle cx="243" cy="230" r="6" fill="#38A169" stroke="#FFFFFF" stroke-width="1.5" />
+  <text x="182" y="352" class="f" font-size="11.5" font-weight="bold" fill="#22543D">聚合点 w_(t+1) 紧贴全局最优 w*</text>
+
+  <rect x="48" y="390" width="396" height="72" rx="6" fill="#FFFFFF" stroke="#9AE6B4" stroke-width="1" />
+  <text x="62" y="412" class="f" font-size="12" font-weight="bold" fill="#22543D">结论（IID 场景）：</text>
+  <text x="62" y="432" class="f" font-size="11.5" fill="#4A5568">各客户端梯度方向高度一致，增大本地训练轮数 E 可让模型</text>
+  <text x="62" y="451" class="f" font-size="11.5" fill="#4A5568">大幅迈向 w*，显著减少总通信轮数且几乎无精度损失。</text>
+
+  
+  <rect x="496" y="78" width="436" height="398" rx="10" fill="#FFF5F5" stroke="#FEB2B2" stroke-width="1.5" />
+  <rect x="496" y="78" width="436" height="38" rx="10" fill="#C53030" />
+  <rect x="496" y="104" width="436" height="12" fill="#C53030" />
+  <text x="714" y="102" text-anchor="middle" class="f" font-size="14" font-weight="bold" fill="#FFFFFF">Non-IID 数据分布：客户端漂移（Client Drift）</text>
+
+  <rect x="516" y="130" width="396" height="248" rx="8" fill="#FFFFFF" stroke="#FEB2B2" stroke-width="1" />
+
+  <ellipse cx="604" cy="186" rx="74" ry="44" fill="none" stroke="#BEE3F8" stroke-width="1.3" stroke-dasharray="3,2" />
+  <ellipse cx="604" cy="186" rx="40" ry="24" fill="#EBF8FF" stroke="#63B3ED" stroke-width="1.3" />
+  <circle cx="604" cy="186" r="5" fill="#2B6CB0" />
+  <text x="530" y="158" class="mono" font-size="11.5" font-weight="bold" fill="#2B6CB0">w1* (客户1局部最优)</text>
+
+  <ellipse cx="834" cy="306" rx="72" ry="44" fill="none" stroke="#FEEBC8" stroke-width="1.3" stroke-dasharray="3,2" />
+  <ellipse cx="834" cy="306" rx="38" ry="23" fill="#FFFAF0" stroke="#F6AD55" stroke-width="1.3" />
+  <circle cx="834" cy="306" r="5" fill="#DD6B20" />
+  <text x="746" y="366" class="mono" font-size="11.5" font-weight="bold" fill="#C05621">w2* (客户2局部最优)</text>
+
+  <circle cx="770" cy="176" r="6.5" fill="#2F855A" />
+  <text x="782" y="172" class="mono" font-size="12" font-weight="bold" fill="#22543D">w* (全局最优)</text>
+
+  <circle cx="574" cy="336" r="6" fill="#1A202C" />
+  <text x="536" y="362" class="mono" font-size="12" font-weight="bold" fill="#1A202C">w_t (起点)</text>
+
+  <polyline points="574,336 582,286 592,240 603,198" fill="none" stroke="#2B6CB0" stroke-width="2.4" marker-end="url(#arr-b2)" />
+  <circle cx="604" cy="193" r="4.5" fill="#2B6CB0" />
+  <text x="524" y="266" class="f" font-size="11" font-weight="bold" fill="#2B6CB0">向 w1* 漂移</text>
+
+  <polyline points="574,336 656,332 738,322 818,309" fill="none" stroke="#DD6B20" stroke-width="2.4" marker-end="url(#arr-o2)" />
+  <circle cx="825" cy="308" r="4.5" fill="#DD6B20" />
+  <text x="646" y="352" class="f" font-size="11" font-weight="bold" fill="#C05621">向 w2* 漂移</text>
+
+  <line x1="604" y1="193" x2="825" y2="308" stroke="#718096" stroke-width="1.6" stroke-dasharray="4,3" />
+  <circle cx="714" cy="250" r="6.5" fill="#E53E3E" stroke="#FFFFFF" stroke-width="1.5" />
+  <text x="668" y="274" class="mono" font-size="11.5" font-weight="bold" fill="#C53030">w_(t+1) (平均结果)</text>
+
+  <line x1="766" y1="184" x2="720" y2="243" stroke="#C53030" stroke-width="2.2" stroke-dasharray="4,2" marker-end="url(#arr-r2)" />
+  <rect x="748" y="206" width="110" height="24" rx="12" fill="#FED7D7" stroke="#E53E3E" stroke-width="1" />
+  <text x="803" y="222" text-anchor="middle" class="f" font-size="11" font-weight="bold" fill="#9B2C2C">漂移误差 (Drift)</text>
+
+  <rect x="516" y="390" width="396" height="72" rx="6" fill="#FFFFFF" stroke="#FEB2B2" stroke-width="1" />
+  <text x="530" y="412" class="f" font-size="12" font-weight="bold" fill="#C53030">结论（Non-IID 场景）：</text>
+  <text x="530" y="432" class="f" font-size="11.5" fill="#4A5568">本地轮数 E 越大，客户端越深陷各自局部最优点，直接平均</text>
+  <text x="530" y="451" class="f" font-size="11.5" fill="#4A5568">后的 w_(t+1) 会严重偏离 w*，导致收敛震荡甚至精度退化。</text>
+</svg>

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 510" width="960" height="510">
+  <defs>
+    <style>
+      .f { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .mono { font-family: "Consolas", "Courier New", monospace; }
+    </style>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6B46C1" />
+    </marker>
+  </defs>
+
+  
+  <rect width="960" height="510" fill="#FFFFFF" rx="12" />
+
+  
+  <text x="480" y="38" text-anchor="middle" class="f" font-size="20" font-weight="bold" fill="#1A202C">联邦学习三大分类：样本-特征矩阵切分视角</text>
+  <text x="480" y="60" text-anchor="middle" class="f" font-size="13" fill="#718096">Taxonomy of Federated Learning Based on Data Partitioning (Yang et al., 2019)</text>
+
+  
+  <rect x="24" y="82" width="292" height="404" rx="10" fill="#EBF8FF" stroke="#90CDF4" stroke-width="1.5" />
+  <rect x="24" y="82" width="292" height="42" rx="10" fill="#2B6CB0" />
+  <rect x="24" y="112" width="292" height="12" fill="#2B6CB0" />
+  <text x="170" y="108" text-anchor="middle" class="f" font-size="14.5" font-weight="bold" fill="#FFFFFF">横向联邦学习 (HFL)</text>
+
+  <rect x="42" y="138" width="256" height="186" rx="8" fill="#FFFFFF" stroke="#BEE3F8" stroke-width="1" />
+  <text x="178" y="158" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#2C5282">特征空间 X  +  标签 Y →</text>
+  <text x="58" y="238" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#2C5282" transform="rotate(-90 58 238)">样本 ID 空间 I →</text>
+
+  <rect x="76" y="168" width="154" height="22" rx="3" fill="#EDF2F7" stroke="#CBD5E0" stroke-width="1" />
+  <text x="153" y="183" text-anchor="middle" class="f" font-size="10.5" fill="#4A5568">相同特征 (CT影像 / 年龄 / 指标)</text>
+  <rect x="234" y="168" width="46" height="22" rx="3" fill="#FEFCBF" stroke="#ECC94B" stroke-width="1" />
+  <text x="257" y="183" text-anchor="middle" class="f" font-size="10.5" font-weight="bold" fill="#975A16">标签 Y</text>
+
+  <rect x="76" y="196" width="204" height="52" rx="4" fill="#BEE3F8" stroke="#3182CE" stroke-width="1.5" />
+  <text x="178" y="218" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#1A365D">参与方 A（北京医院）</text>
+  <text x="178" y="237" text-anchor="middle" class="f" font-size="10.5" fill="#2A4365">样本：病人 1 ~ 5000</text>
+
+  <line x1="70" y1="254" x2="286" y2="254" stroke="#E53E3E" stroke-width="1.8" stroke-dasharray="5,3" />
+
+  <rect x="76" y="260" width="204" height="52" rx="4" fill="#90CDF4" stroke="#2B6CB0" stroke-width="1.5" />
+  <text x="178" y="282" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#1A365D">参与方 B（广州医院）</text>
+  <text x="178" y="301" text-anchor="middle" class="f" font-size="10.5" fill="#2A4365">样本：病人 5001 ~ 9000</text>
+
+  <rect x="42" y="336" width="256" height="136" rx="8" fill="#FFFFFF" stroke="#BEE3F8" stroke-width="1" />
+  <text x="170" y="358" text-anchor="middle" class="mono" font-size="12.5" font-weight="bold" fill="#2B6CB0">X_A = X_B, Y_A = Y_B, I_A ≠ I_B</text>
+  <line x1="56" y1="368" x2="284" y2="368" stroke="#E2E8F0" stroke-width="1" />
+  <text x="54" y="388" class="f" font-size="11.5" font-weight="bold" fill="#2D3748">切分方式：按行（样本）切分</text>
+  <text x="54" y="409" class="f" font-size="11.5" fill="#4A5568">• 特征重叠多，用户重叠少</text>
+  <text x="54" y="430" class="f" font-size="11.5" fill="#4A5568">• 目标：扩充有效训练样本量</text>
+  <text x="54" y="451" class="f" font-size="11.5" fill="#4A5568">• 代表：跨院医疗影像、手机输入法</text>
+
+  
+  <rect x="334" y="82" width="292" height="404" rx="10" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5" />
+  <rect x="334" y="82" width="292" height="42" rx="10" fill="#2F855A" />
+  <rect x="334" y="112" width="292" height="12" fill="#2F855A" />
+  <text x="480" y="108" text-anchor="middle" class="f" font-size="14.5" font-weight="bold" fill="#FFFFFF">纵向联邦学习 (VFL)</text>
+
+  <rect x="352" y="138" width="256" height="186" rx="8" fill="#FFFFFF" stroke="#C6F6D5" stroke-width="1" />
+  <text x="488" y="158" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#22543D">特征空间 X_A / X_B  +  标签 Y →</text>
+  <text x="368" y="238" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#22543D" transform="rotate(-90 368 238)">共同用户 ID 空间 I →</text>
+
+  <rect x="386" y="168" width="204" height="22" rx="3" fill="#EDF2F7" stroke="#CBD5E0" stroke-width="1" />
+  <text x="488" y="183" text-anchor="middle" class="f" font-size="10.5" font-weight="bold" fill="#2F855A">经 PSI 对齐后的共同样本 ID</text>
+
+  <rect x="386" y="196" width="102" height="116" rx="4" fill="#C6F6D5" stroke="#2F855A" stroke-width="1.5" />
+  <text x="437" y="220" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#22543D">参与方 A</text>
+  <text x="437" y="238" text-anchor="middle" class="f" font-size="10.5" fill="#276749">同城银行</text>
+  <text x="437" y="258" text-anchor="middle" class="f" font-size="10" fill="#276749">特征: 流水/征信</text>
+  <rect x="401" y="270" width="72" height="24" rx="4" fill="#FEFCBF" stroke="#ECC94B" stroke-width="1" />
+  <text x="437" y="286" text-anchor="middle" class="f" font-size="10" font-weight="bold" fill="#975A16">含标签 Y</text>
+
+  <line x1="493" y1="192" x2="493" y2="316" stroke="#E53E3E" stroke-width="1.8" stroke-dasharray="5,3" />
+
+  <rect x="498" y="196" width="92" height="116" rx="4" fill="#9AE6B4" stroke="#276749" stroke-width="1.5" />
+  <text x="544" y="220" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#22543D">参与方 B</text>
+  <text x="544" y="238" text-anchor="middle" class="f" font-size="10.5" fill="#276749">同城电商</text>
+  <text x="544" y="258" text-anchor="middle" class="f" font-size="10" fill="#276749">特征: 购物偏好</text>
+  <text x="544" y="282" text-anchor="middle" class="f" font-size="10" fill="#22543D">（无标签）</text>
+
+  <rect x="352" y="336" width="256" height="136" rx="8" fill="#FFFFFF" stroke="#C6F6D5" stroke-width="1" />
+  <text x="480" y="358" text-anchor="middle" class="mono" font-size="12.5" font-weight="bold" fill="#2F855A">X_A ≠ X_B,  I_A = I_B</text>
+  <line x1="366" y1="368" x2="594" y2="368" stroke="#E2E8F0" stroke-width="1" />
+  <text x="364" y="388" class="f" font-size="11.5" font-weight="bold" fill="#2D3748">切分方式：按列（特征）切分</text>
+  <text x="364" y="409" class="f" font-size="11.5" fill="#4A5568">• 用户重叠多，业务特征互补</text>
+  <text x="364" y="430" class="f" font-size="11.5" fill="#4A5568">• 目标：扩充单个用户的特征维度</text>
+  <text x="364" y="451" class="f" font-size="11.5" fill="#4A5568">• 代表：银行+电商风控、广告转化</text>
+
+  
+  <rect x="644" y="82" width="292" height="404" rx="10" fill="#FAF5FF" stroke="#D6BCFA" stroke-width="1.5" />
+  <rect x="644" y="82" width="292" height="42" rx="10" fill="#6B46C1" />
+  <rect x="644" y="112" width="292" height="12" fill="#6B46C1" />
+  <text x="790" y="108" text-anchor="middle" class="f" font-size="14.5" font-weight="bold" fill="#FFFFFF">联邦迁移学习 (FTL)</text>
+
+  <rect x="662" y="138" width="256" height="186" rx="8" fill="#FFFFFF" stroke="#E9D8FD" stroke-width="1" />
+  <text x="798" y="158" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#553C9A">特征空间 X_A / X_B →</text>
+  <text x="678" y="238" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#553C9A" transform="rotate(-90 678 238)">样本 ID 空间 I →</text>
+
+  <rect x="696" y="170" width="204" height="142" rx="4" fill="#F7FAFC" stroke="#CBD5E0" stroke-width="1" stroke-dasharray="4,3" />
+
+  <rect x="696" y="170" width="118" height="78" rx="4" fill="#E9D8FD" stroke="#805AD5" stroke-width="1.5" />
+  <text x="755" y="198" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#44337A">参与方 A（源域）</text>
+  <text x="755" y="218" text-anchor="middle" class="f" font-size="10" fill="#553C9A">中国银行（含标签）</text>
+
+  <rect x="782" y="228" width="118" height="84" rx="4" fill="#D6BCFA" stroke="#6B46C1" stroke-width="1.5" />
+  <text x="841" y="266" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#44337A">参与方 B（目标域）</text>
+  <text x="841" y="286" text-anchor="middle" class="f" font-size="10" fill="#553C9A">美国电商（少标签）</text>
+
+  <rect x="782" y="228" width="32" height="20" fill="#F6AD55" stroke="#C05621" stroke-width="1.2" />
+  <text x="798" y="242" text-anchor="middle" class="f" font-size="9" font-weight="bold" fill="#7B341E">少交集</text>
+
+  <path d="M 735 256 Q 735 288 776 280" fill="none" stroke="#6B46C1" stroke-width="2" marker-end="url(#arr-purple)" />
+  <text x="738" y="302" text-anchor="middle" class="f" font-size="10" font-weight="bold" fill="#6B46C1">特征表示迁移</text>
+
+  <rect x="662" y="336" width="256" height="136" rx="8" fill="#FFFFFF" stroke="#E9D8FD" stroke-width="1" />
+  <text x="790" y="358" text-anchor="middle" class="mono" font-size="12.5" font-weight="bold" fill="#6B46C1">X_A ≠ X_B,  I_A ≠ I_B</text>
+  <line x1="676" y1="368" x2="904" y2="368" stroke="#E2E8F0" stroke-width="1" />
+  <text x="674" y="388" class="f" font-size="11.5" font-weight="bold" fill="#2D3748">切分方式：行列重叠均极少</text>
+  <text x="674" y="409" class="f" font-size="11.5" fill="#4A5568">• 样本与特征均高度异构</text>
+  <text x="674" y="430" class="f" font-size="11.5" fill="#4A5568">• 目标：借助迁移学习共享隐特征</text>
+  <text x="674" y="451" class="f" font-size="11.5" fill="#4A5568">• 代表：跨地域且跨行业联合建模</text>
+</svg>

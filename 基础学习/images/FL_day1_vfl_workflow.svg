@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 550" width="960" height="550">
+  <defs>
+    <style>
+      .f { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .mono { font-family: "Consolas", "Courier New", monospace; }
+    </style>
+    <marker id="arr-green2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2F855A" />
+    </marker>
+    <marker id="arr-blue2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2B6CB0" />
+    </marker>
+    <marker id="arr-red2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#C53030" />
+    </marker>
+  </defs>
+
+  <rect width="960" height="550" fill="#FFFFFF" rx="12" />
+
+  <text x="480" y="38" text-anchor="middle" class="f" font-size="20" font-weight="bold" fill="#1A202C">纵向联邦学习（VFL）核心流程：样本对齐与联合训练</text>
+  <text x="480" y="60" text-anchor="middle" class="f" font-size="13" fill="#718096">Vertical Federated Learning: Encrypted Entity Alignment (PSI) &amp; SplitNN Collaborative Training</text>
+
+  
+  <rect x="28" y="80" width="904" height="148" rx="10" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1.5" />
+  <rect x="28" y="80" width="236" height="32" rx="8" fill="#2F855A" />
+  <text x="146" y="101" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#FFFFFF">阶段一：隐私集合求交（PSI）</text>
+  <text x="280" y="101" class="f" font-size="12" font-weight="bold" fill="#22543D">目的：对齐共同用户 ID，且绝不暴露双方各自的非重叠客户名单</text>
+
+  <rect x="52" y="124" width="236" height="86" rx="8" fill="#FFFFFF" stroke="#68D391" stroke-width="1.5" />
+  <text x="170" y="146" text-anchor="middle" class="f" font-size="12.5" font-weight="bold" fill="#2D3748">被动方 B（电商 · 无标签）</text>
+  <text x="170" y="168" text-anchor="middle" class="mono" font-size="12" fill="#4A5568">ID = { u2, u3, u4, u6 }</text>
+  <text x="170" y="192" text-anchor="middle" class="f" font-size="11" fill="#718096">非交集 u4, u6 严禁泄露给银行</text>
+
+  <rect x="352" y="124" width="256" height="86" rx="8" fill="#2F855A" />
+  <text x="480" y="148" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#FFFFFF">加密求交协议（RSA 盲签名 / 哈希）</text>
+  <rect x="378" y="160" width="204" height="36" rx="6" fill="#FFFFFF" />
+  <text x="480" y="183" text-anchor="middle" class="mono" font-size="13" font-weight="bold" fill="#22543D">对齐结果：I_common = { u2, u3 }</text>
+
+  <rect x="672" y="124" width="236" height="86" rx="8" fill="#FFFFFF" stroke="#68D391" stroke-width="1.5" />
+  <text x="790" y="146" text-anchor="middle" class="f" font-size="12.5" font-weight="bold" fill="#2D3748">主动方 A（银行 · 含标签 Y）</text>
+  <text x="790" y="168" text-anchor="middle" class="mono" font-size="12" fill="#4A5568">ID = { u1, u2, u3, u5 }</text>
+  <text x="790" y="192" text-anchor="middle" class="f" font-size="11" fill="#718096">非交集 u1, u5 严禁泄露给电商</text>
+
+  <line x1="288" y1="167" x2="346" y2="167" stroke="#2F855A" stroke-width="2.2" marker-end="url(#arr-green2)" />
+  <line x1="672" y1="167" x2="614" y2="167" stroke="#2F855A" stroke-width="2.2" marker-end="url(#arr-green2)" />
+
+  
+  <rect x="28" y="246" width="904" height="278" rx="10" fill="#EBF8FF" stroke="#90CDF4" stroke-width="1.5" />
+  <rect x="28" y="246" width="290" height="32" rx="8" fill="#2B6CB0" />
+  <text x="173" y="267" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#FFFFFF">阶段二：拆分神经网络（SplitNN）联合训练</text>
+  <text x="334" y="267" class="f" font-size="12" font-weight="bold" fill="#2C5282">只交换中间特征表示与局部梯度，原始特征与标签均不出本地</text>
+
+  <rect x="52" y="294" width="320" height="178" rx="8" fill="#FFFFFF" stroke="#63B3ED" stroke-width="1.5" />
+  <text x="212" y="317" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#2B6CB0">被动方 B（电商 · Host）</text>
+
+  <rect x="72" y="334" width="112" height="58" rx="6" fill="#EDF2F7" stroke="#A0AEC0" stroke-width="1" />
+  <text x="128" y="358" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#2D3748">本地特征 X_B</text>
+  <text x="128" y="378" text-anchor="middle" class="f" font-size="10.5" fill="#718096">消费/浏览行为</text>
+
+  <rect x="214" y="334" width="138" height="58" rx="6" fill="#BEE3F8" stroke="#3182CE" stroke-width="1.5" />
+  <text x="283" y="357" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#1A365D">底层模型 G_B</text>
+  <text x="283" y="377" text-anchor="middle" class="mono" font-size="11" fill="#2A4365">H_B = G_B(X_B)</text>
+
+  <line x1="184" y1="363" x2="208" y2="363" stroke="#2B6CB0" stroke-width="2" marker-end="url(#arr-blue2)" />
+
+  <rect x="72" y="408" width="280" height="48" rx="6" fill="#FFF5F5" stroke="#FEB2B2" stroke-width="1" />
+  <text x="212" y="428" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#C53030">链式法则更新本地参数 θ_B</text>
+  <text x="212" y="446" text-anchor="middle" class="mono" font-size="11" fill="#742A2A">∂L/∂θ_B = (∂L/∂H_B) · (∂H_B/∂θ_B)</text>
+
+  <rect x="548" y="294" width="360" height="178" rx="8" fill="#FFFFFF" stroke="#63B3ED" stroke-width="1.5" />
+  <text x="728" y="317" text-anchor="middle" class="f" font-size="13" font-weight="bold" fill="#2B6CB0">主动方 A（银行 · Guest，持有标签 Y）</text>
+
+  <rect x="568" y="334" width="124" height="58" rx="6" fill="#BEE3F8" stroke="#3182CE" stroke-width="1.5" />
+  <text x="630" y="357" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#1A365D">底层模型 G_A</text>
+  <text x="630" y="377" text-anchor="middle" class="mono" font-size="11" fill="#2A4365">H_A = G_A(X_A)</text>
+
+  <rect x="724" y="334" width="164" height="58" rx="6" fill="#FEFCBF" stroke="#D69E2E" stroke-width="1.5" />
+  <text x="806" y="356" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#744210">顶层模型 F_top + Loss</text>
+  <text x="806" y="376" text-anchor="middle" class="mono" font-size="10.5" fill="#975A16">L( F_top(H_A, H_B), Y )</text>
+
+  <line x1="692" y1="363" x2="718" y2="363" stroke="#2B6CB0" stroke-width="2" marker-end="url(#arr-blue2)" />
+
+  <rect x="568" y="408" width="320" height="48" rx="6" fill="#F0FFF4" stroke="#9AE6B4" stroke-width="1" />
+  <text x="728" y="428" text-anchor="middle" class="f" font-size="11.5" font-weight="bold" fill="#22543D">本地计算损失并反向传播</text>
+  <text x="728" y="446" text-anchor="middle" class="f" font-size="11" fill="#276749">更新 F_top 与 G_A，同时计算对 H_B 的偏导 ∂L/∂H_B</text>
+
+  <line x1="376" y1="358" x2="542" y2="358" stroke="#2B6CB0" stroke-width="2.6" marker-end="url(#arr-blue2)" />
+  <rect x="386" y="328" width="148" height="24" rx="12" fill="#2B6CB0" />
+  <text x="460" y="344" text-anchor="middle" class="f" font-size="11" font-weight="bold" fill="#FFFFFF">① 前向发送中间特征 H_B</text>
+
+  <line x1="544" y1="428" x2="378" y2="428" stroke="#C53030" stroke-width="2.6" stroke-dasharray="6,3" marker-end="url(#arr-red2)" />
+  <rect x="386" y="398" width="148" height="24" rx="12" fill="#C53030" />
+  <text x="460" y="414" text-anchor="middle" class="f" font-size="11" font-weight="bold" fill="#FFFFFF">② 回传局部梯度 ∂L/∂H_B</text>
+
+  <rect x="52" y="484" width="856" height="28" rx="6" fill="#FFFFFF" stroke="#90CDF4" stroke-width="1" />
+  <text x="480" y="502" text-anchor="middle" class="f" font-size="12" font-weight="bold" fill="#2C5282">安全边界：全流程中，电商原始特征 X_B、银行原始特征 X_A 及敏感标签 Y 均未离开本地（生产环境常配合同态加密或噪声加固）</text>
+</svg>
